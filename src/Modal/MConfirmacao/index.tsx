@@ -9,6 +9,7 @@ type Props = {
 }
 
 const MConfirmacao = ({ onClose, onVoltar, onFinalizar }: Props) => {
+  void onVoltar
   return (
     <Overlay>
       <Exit onClick={onClose} />
