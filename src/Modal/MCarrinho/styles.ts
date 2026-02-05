@@ -11,6 +11,10 @@ export const Texto = styled.h3`
   justify-content: space-between;
 `
 
+export const FotoComida = styled.img`
+  margin-right: 8px;
+`
+
 export const Lista = styled.ul`
   list-style: none;
   display: flex;
@@ -22,7 +26,7 @@ export const Card = styled.li`
   background-color: ${Cores.rosaClaro};
   color: ${Cores.rosa};
   display: flex;
-  align-items: flex-end;
+
   justify-content: space-between;
   width: 344px;
   height: 100px;
@@ -44,14 +48,11 @@ export const Card = styled.li`
 
 export const Conteudo = styled.div`
   display: flex;
-
-  img {
-    margin-right: 8px;
-  }
 `
 
 export const Lixeira = styled.img`
   height: 16px;
   width: 16px;
   cursor: pointer;
+  align-self: flex-end;
 `

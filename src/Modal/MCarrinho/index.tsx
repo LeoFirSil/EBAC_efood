@@ -1,5 +1,9 @@
+import { useSelector, useDispatch } from 'react-redux'
+import type { RootState } from '../../store'
+import { remover } from '../../store/reducers/carrinho'
+
 import lixeira from '../../assets/images/lixeira.png'
-import { Card, Lista, Texto, Lixeira, Conteudo } from './styles'
+import { Card, Lista, Texto, Lixeira, Conteudo, FotoComida } from './styles'
 import { Overlay, ModalBox, Botao, Exit, BoxTesto } from '../styles'
 
 type Props = {
@@ -8,39 +12,58 @@ type Props = {
 }
 
 const MCarrinho = ({ onClose, onContinuar }: Props) => {
+  const dispatch = useDispatch()
+  const itens = useSelector((state: RootState) => state.carrinho.itens)
+
+  const total = itens.reduce((acc, item) => acc + item.preco, 0)
+
+  const handleContinuar = () => {
+    if (itens.length === 0) {
+      alert('Carrinho vazio! clique fora para retornar!')
+      return
+    }
+    onContinuar()
+  }
+
   return (
     <Overlay>
       <Exit onClick={onClose} />
       <ModalBox>
         <BoxTesto>
           <Lista>
-            <Card>
-              <Conteudo>
-                <img src="//placehold.co/80x80" alt="fotoPrato" />
-                <div>
-                  <h2>Nome da comida</h2>
-                  <h3>R$ valor</h3>
-                </div>
-              </Conteudo>
-              <Lixeira src={lixeira} alt="lixeira" />
-            </Card>
-            <Card>
-              <Conteudo>
-                <img src="//placehold.co/80x80" alt="fotoPrato" />
-                <div>
-                  <h2>Nome da comida</h2>
-                  <h3>R$ valor</h3>
-                </div>
-              </Conteudo>
-              <Lixeira src={lixeira} alt="lixeira" />
-            </Card>
+            {itens.map((item) => (
+              <Card key={item.id}>
+                <Conteudo>
+                  <FotoComida src={item.image} alt={item.foodName} width={80} />
+                  <div>
+                    <h2>{item.foodName}</h2>
+                    <h3>
+                      {item.preco.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                      })}
+                    </h3>
+                  </div>
+                </Conteudo>
+                <Lixeira
+                  src={lixeira}
+                  alt="lixeira"
+                  onClick={() => dispatch(remover(item.id))}
+                />
+              </Card>
+            ))}
           </Lista>
           <Texto>
             Valor total
-            <div>{'R$ 60,00'}</div>
+            <div>
+              {total.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+              })}
+            </div>
           </Texto>
         </BoxTesto>
-        <Botao onClick={onContinuar}>Continuar com a entrega</Botao>
+        <Botao onClick={handleContinuar}>Continuar com a entrega</Botao>
       </ModalBox>
     </Overlay>
   )

@@ -12,6 +12,8 @@ export const Overlay = styled.div`
   align-items: center;
   justify-content: right;
   z-index: 999;
+  overflow-y: auto;
+  overflow-x: hidden;
 `
 
 export const ModalBox = styled.div`

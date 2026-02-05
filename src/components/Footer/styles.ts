@@ -11,13 +11,13 @@ export const FooterContainer = styled.div`
   justify-content: center;
 
   img {
-    padding-top: 40px;
+    margin-top: 40px;
   }
 `
 
 export const LinkMidia = styled.ul`
   display: flex;
-  padding-top: 30px;
+  margin-top: 30px;
 
   li {
     margin-right: 8px;

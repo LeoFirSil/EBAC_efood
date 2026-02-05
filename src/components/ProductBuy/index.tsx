@@ -1,9 +1,13 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { Card, Descricao, Content, Titulo } from './styles'
 import Mperfil from '../../Modal/Mperfil'
+import { adicionar } from '../../store/reducers/carrinho'
+import Refeicao from '../../models/Refeicao'
 
 type Props = {
+  id: number
   foodName: string
   description: string
   description2: string
@@ -12,6 +16,7 @@ type Props = {
 }
 
 const ProductBuy = ({
+  id,
   foodName,
   description,
   description2,
@@ -19,6 +24,16 @@ const ProductBuy = ({
   image
 }: Props) => {
   const [perfilOpen, setPerfilOpen] = useState(false)
+  const dispatch = useDispatch()
+
+  const refeicao: Refeicao = {
+    id,
+    foodName,
+    description,
+    description2,
+    image,
+    preco
+  }
 
   return (
     <>
@@ -38,7 +53,7 @@ const ProductBuy = ({
           image={image}
           preco={preco}
           onClose={() => setPerfilOpen(false)}
-          onComprar={() => setPerfilOpen(false)}
+          onComprar={() => dispatch(adicionar(refeicao))}
         />
       )}
     </>

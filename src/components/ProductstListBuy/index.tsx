@@ -14,6 +14,7 @@ const ProductListBuy = ({ refeicao }: Props) => (
         {refeicao.map((refeicao) => (
           <ProductBuy
             key={refeicao.id}
+            id={refeicao.id}
             description={refeicao.description}
             image={refeicao.image}
             foodName={refeicao.foodName}

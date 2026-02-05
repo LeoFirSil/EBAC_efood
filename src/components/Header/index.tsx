@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import type { RootState } from '../../store'
 
 import { Link } from 'react-router-dom'
 
@@ -17,6 +19,8 @@ const Header = () => {
     'carrinho' | 'entrega' | 'pagamento' | 'confirmacao' | null
   >(null)
 
+  const itens = useSelector((state: RootState) => state.carrinho.itens)
+
   return (
     <>
       <Perfil style={{ backgroundImage: `url(${fundo})` }}>
@@ -26,7 +30,7 @@ const Header = () => {
             <img src={logo} alt="efood" />
           </Link>
           <Carrinho onClick={() => setFlowModal('carrinho')}>
-            {0} - produto(s) no carrinho
+            {itens.length} - produto(s) no carrinho
           </Carrinho>
         </HeaderBar>
       </Perfil>
