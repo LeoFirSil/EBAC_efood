@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/static/js/main.366fba43.js",
+    "static/js/787.5f33a236.chunk.js": "/static/js/787.5f33a236.chunk.js",
+    "static/media/esfihas.png": "/static/media/esfihas.d10d99065a781069c933.png",
+    "static/media/sushi.png": "/static/media/sushi.d0dcf98fff31ab313ada.png",
+    "static/media/esfiha.png": "/static/media/esfiha.ae75730dfe10b2e66e10.png",
+    "static/media/fundo.png": "/static/media/fundo.6c4755be28f7c34bc8f4.png",
+    "index.html": "/index.html",
+    "main.366fba43.js.map": "/static/js/main.366fba43.js.map",
+    "787.5f33a236.chunk.js.map": "/static/js/787.5f33a236.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.366fba43.js"
+  ]
+}
