@@ -10,10 +10,8 @@ export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   z-index: 999;
-  overflow-y: auto;
-  overflow-x: hidden;
 `
 
 export const ModalBox = styled.div`
@@ -24,7 +22,7 @@ export const ModalBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: flex-end;
 `
 
 export const Exit = styled.div`

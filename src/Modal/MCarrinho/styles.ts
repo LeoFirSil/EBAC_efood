@@ -13,20 +13,24 @@ export const Texto = styled.h3`
 
 export const FotoComida = styled.img`
   margin-right: 8px;
+  object-fit: cover;
 `
 
 export const Lista = styled.ul`
   list-style: none;
   display: flex;
+  max-width: 344px;
+  max-height: 600px;
   flex-direction: column;
   gap: 16px;
   margin-top: 16px;
+  overflow-y: auto;
+  overflow-x: auto;
 `
 export const Card = styled.li`
   background-color: ${Cores.rosaClaro};
   color: ${Cores.rosa};
   display: flex;
-
   justify-content: space-between;
   width: 344px;
   height: 100px;
