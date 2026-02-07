@@ -22,7 +22,7 @@ export const ModalBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: right;
 `
 
 export const Exit = styled.div`
