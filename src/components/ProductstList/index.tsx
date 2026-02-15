@@ -1,30 +1,46 @@
+import { Restaurante } from '../../pages/Home'
 import Product from '../Product'
 
 import { Container, List } from './styles'
-import Food from '../../models/Food'
 
 export type Props = {
-  food: Food[]
+  food: Restaurante[]
 }
 
-const ProductList = ({ food }: Props) => (
-  <Container>
-    <div className="container">
-      <List>
-        {food.map((food) => (
-          <Product
-            key={food.id}
-            rating={food.rating}
-            description={food.description}
-            image={food.image}
-            infos={food.infos}
-            foodName={food.foodName}
-            tagSize={food.tagSize}
-          />
-        ))}
-      </List>
-    </div>
-  </Container>
-)
+const ProductList = ({ food }: Props) => {
+  const getFoodTags = (food: Restaurante) => {
+    const tags = []
+
+    if (food.destacado) {
+      tags.push('Destaque da semana')
+    }
+
+    if (food.tipo) {
+      tags.push(food.tipo)
+    }
+
+    return tags
+  }
+
+  return (
+    <Container>
+      <div className="container">
+        <List>
+          {food.map((food) => (
+            <Product
+              key={food.id}
+              id={food.id}
+              rating={food.avaliacao}
+              description={food.descricao}
+              image={food.capa}
+              infos={getFoodTags(food)}
+              foodName={food.titulo}
+            />
+          ))}
+        </List>
+      </div>
+    </Container>
+  )
+}
 
 export default ProductList

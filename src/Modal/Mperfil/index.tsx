@@ -10,19 +10,21 @@ import {
 } from './styles'
 
 type Props = {
-  foodName: string
-  description2: string
-  image: string
+  nome: string
+  descricao: string
+  foto: string
   preco: number
+  porcao: string
   onClose: () => void
   onComprar: () => void
 }
 
 const Mperfil = ({
-  foodName,
-  description2,
-  image,
+  nome,
+  descricao,
+  foto,
   preco,
+  porcao,
   onClose,
   onComprar
 }: Props) => {
@@ -33,10 +35,11 @@ const Mperfil = ({
           <CloseIcon onClick={onClose}>
             <img src={close} alt="x" />
           </CloseIcon>
-          <Foto src={image} alt={foodName} />
+          <Foto src={foto} alt={nome} />
           <div>
-            <h2>{foodName}</h2>
-            <BoxText>{description2}</BoxText>
+            <h2>{nome}</h2>
+            <BoxText>{descricao}</BoxText>
+            <BoxText>Porção: {porcao}</BoxText>
             <AddButton
               onClick={() => {
                 onComprar()

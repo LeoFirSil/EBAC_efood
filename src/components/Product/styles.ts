@@ -1,14 +1,41 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
+import { ButtonLink } from '../Buttton/styles'
 
 export const Card = styled.div`
   background-color: ${Cores.branco};
   border: 1px solid ${Cores.rosa};
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
 
   ${TagContainer} {
     margin-left: 8px;
+  }
+`
+export const Content = styled.div`
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  ${ButtonLink} {
+    margin-top: auto;
+    width: 82px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 `
 
@@ -50,8 +77,4 @@ export const Nota = styled.div`
   img {
     margin-left: 8px;
   }
-`
-
-export const Content = styled.div`
-  padding: 8px;
 `

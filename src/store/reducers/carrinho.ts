@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import Refeicao from '../../models/Refeicao'
+import { Refeicao } from '../../pages/Home'
 
 type CarrinhoState = {
   itens: Refeicao[]

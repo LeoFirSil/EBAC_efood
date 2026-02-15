@@ -18,6 +18,7 @@ type Props = {
   description: string
   infos: string[]
   image: string
+  id: number
   tagSize?: 'small' | 'big'
 }
 
@@ -27,6 +28,7 @@ const Product = ({
   description,
   image,
   infos,
+  id,
   tagSize = 'small'
 }: Props) => (
   <Card>
@@ -47,7 +49,7 @@ const Product = ({
         </Nota>
       </TituloNota>
       <Descricao>{description}</Descricao>
-      <ButtonLink to="/Perfil">Saiba mais</ButtonLink>
+      <ButtonLink to={`/Perfil/${id}`}>Saiba mais</ButtonLink>
     </Content>
   </Card>
 )

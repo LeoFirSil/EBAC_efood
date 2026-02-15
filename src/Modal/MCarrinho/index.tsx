@@ -34,9 +34,9 @@ const MCarrinho = ({ onClose, onContinuar }: Props) => {
             {itens.map((item) => (
               <Card key={item.id}>
                 <Conteudo>
-                  <FotoComida src={item.image} alt={item.foodName} width={80} />
+                  <FotoComida src={item.foto} alt={item.nome} width={80} />
                   <div>
-                    <h2>{item.foodName}</h2>
+                    <h2>{item.nome}</h2>
                     <h3>
                       {item.preco.toLocaleString('pt-BR', {
                         style: 'currency',

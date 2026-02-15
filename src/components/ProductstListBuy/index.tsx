@@ -1,7 +1,7 @@
+import { Refeicao } from '../../pages/Home'
 import ProductBuy from '../ProductBuy'
 
 import { Container, List } from './styles'
-import Refeicao from '../../models/Refeicao'
 
 export type Props = {
   refeicao: Refeicao[]
@@ -15,10 +15,10 @@ const ProductListBuy = ({ refeicao }: Props) => (
           <ProductBuy
             key={refeicao.id}
             id={refeicao.id}
-            description={refeicao.description}
-            image={refeicao.image}
-            foodName={refeicao.foodName}
-            description2={refeicao.description2}
+            descricao={refeicao.descricao}
+            foto={refeicao.foto}
+            nome={refeicao.nome}
+            porcao={refeicao.porcao}
             preco={refeicao.preco}
           />
         ))}

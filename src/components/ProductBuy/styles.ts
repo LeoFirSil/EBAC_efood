@@ -3,9 +3,15 @@ import { Cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${Cores.rosa};
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   img {
+    display: block;
     width: 95%;
+    height: 200px;
+    object-fit: cover;
     margin: 8px 8px 0 8px;
   }
 `
@@ -30,6 +36,9 @@ export const Descricao = styled.p`
 
 export const Content = styled.div`
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
   button {
     font-size: 14px;
@@ -39,5 +48,6 @@ export const Content = styled.div`
     padding: 4px 0;
     width: 100%;
     border: none;
+    margin-top: auto;
   }
 `
