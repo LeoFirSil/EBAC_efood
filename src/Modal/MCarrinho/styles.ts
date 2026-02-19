@@ -20,7 +20,7 @@ export const Lista = styled.ul`
   list-style: none;
   display: flex;
   max-width: 344px;
-  max-height: 600px;
+  max-height: 550px;
   flex-direction: column;
   gap: 16px;
   margin-top: 16px;

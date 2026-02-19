@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux'
+import { limpar } from '../../store/reducers/carrinho'
 import { Titulo } from '../MEntrega/styles'
 import { ModalBox, Overlay, Exit, BoxTesto, Botao } from '../styles'
 import { TestoFinal } from './styles'
@@ -10,6 +12,8 @@ type Props = {
 
 const MConfirmacao = ({ onClose, onVoltar, onFinalizar }: Props) => {
   void onVoltar
+  const dispatch = useDispatch()
+
   return (
     <Overlay>
       <Exit onClick={onClose} />
@@ -32,7 +36,15 @@ const MConfirmacao = ({ onClose, onVoltar, onFinalizar }: Props) => {
             <br />
           </TestoFinal>
         </BoxTesto>
-        <Botao onClick={onFinalizar}>Concluir</Botao>
+        <Botao
+          onClick={() => {
+            onFinalizar()
+            dispatch(limpar())
+            alert('Compra finalizada com sucesso!')
+          }}
+        >
+          Concluir
+        </Botao>
       </ModalBox>
     </Overlay>
   )

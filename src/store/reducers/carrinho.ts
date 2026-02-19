@@ -23,13 +23,19 @@ const carrinhoSlice = createSlice({
 
       if (!existe) {
         state.itens.push(comidaCarrinho)
+        alert('Produto adicionado ao carrinho!')
+      } else {
+        alert('já possui esse item no carrinho')
       }
     },
     remover: (state, action: PayloadAction<number>) => {
       state.itens = state.itens.filter((comida) => comida.id !== action.payload)
+    },
+    limpar: (state) => {
+      state.itens = []
     }
   }
 })
 
-export const { adicionar, remover } = carrinhoSlice.actions
+export const { adicionar, remover, limpar } = carrinhoSlice.actions
 export default carrinhoSlice.reducer

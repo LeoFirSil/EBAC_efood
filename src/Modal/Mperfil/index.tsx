@@ -44,7 +44,6 @@ const Mperfil = ({
               onClick={() => {
                 onComprar()
                 onClose()
-                alert('Produto adicionado ao carrinho!')
               }}
             >
               Adicionar ao carrinho -
